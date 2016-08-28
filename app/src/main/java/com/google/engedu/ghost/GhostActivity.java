@@ -66,10 +66,11 @@ public class GhostActivity extends ActionBarActivity {
                 userTurn=false;
                 word="";
                 computerTurn();
+                onStart(null);
             }
         });
 
-      // onStart(null);
+      onStart(null);
     }
 
     @Override
@@ -128,6 +129,7 @@ public class GhostActivity extends ActionBarActivity {
                 possibleWord=simpledictionary.getAnyWordStartingWith(null);
                 textview.setText(possibleWord.substring(0,3));
                 word=possibleWord.substring(0,3);
+                return;
             }
             else{
                 possibleWord=simpledictionary.getAnyWordStartingWith(word.toLowerCase());
@@ -155,8 +157,8 @@ public class GhostActivity extends ActionBarActivity {
      */
     public boolean onStart(View view) {
         userTurn = random.nextBoolean();
-        TextView text = (TextView) findViewById(R.id.ghostText);
-        text.setText("");
+        /*TextView text = (TextView) findViewById(R.id.ghostText);
+        text.setText("");*/
         TextView label = (TextView) findViewById(R.id.gameStatus);
         if (userTurn) {
             label.setText(USER_TURN);
