@@ -27,12 +27,14 @@ public class GhostActivity extends ActionBarActivity {
     private Button challenge;
     private Button restart;
     private String possibleWord;
+    private TextView Score;
+    private int score_val=0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ghost);
 
-
+        Score=(TextView) findViewById(R.id.score);
         challenge=(Button) findViewById(R.id.challenge_button);
         restart=(Button) findViewById(R.id.restart_button);
         textview=(TextView) findViewById(R.id.ghostText);
@@ -52,6 +54,8 @@ public class GhostActivity extends ActionBarActivity {
                 if(simpledictionary.isWord(word)) {
                     gameStatus.setText("You Won");
                     challenge.setEnabled(false);
+                    score_val+=10;
+                    Score.setText("Your Score"+"\n"+score_val);
                 }
                 else {
                     gameStatus.setText("You Lose.Word possible is:"+possibleWord);

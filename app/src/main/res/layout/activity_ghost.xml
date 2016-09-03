@@ -41,6 +41,15 @@
         android:layout_below="@+id/gameStatus"
         android:text="RESTART"
         android:layout_toRightOf="@+id/challenge_button"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/challenge_button"
+        android:paddingTop="5dp"
+        android:textSize="20sp"
+
+        android:id="@+id/score"
+        />
 
 
 </RelativeLayout>
